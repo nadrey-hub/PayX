@@ -180,6 +180,13 @@ img{display:block;max-width:100%}
 .comm-form input{flex:1;font-family:var(--body);font-size:.9rem;padding:13px 18px;border-radius:9px;border:1.5px solid rgba(255,255,255,.25);background:rgba(255,255,255,.1);color:#fff;outline:none;transition:all .2s}
 .comm-form input::placeholder{color:rgba(255,255,255,.45)}
 .comm-form input:focus{border-color:rgba(255,255,255,.55);background:rgba(255,255,255,.15)}
+.c-form{max-width:640px;margin:36px auto 0;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.c-form .full{grid-column:1/-1}
+.c-form label{display:block;font-size:.76rem;font-weight:600;color:var(--tx3);margin-bottom:7px;letter-spacing:.02em}
+.c-form input,.c-form select,.c-form textarea{width:100%;font-family:var(--body);font-size:.88rem;padding:13px 16px;border-radius:10px;border:1.5px solid var(--bd);background:var(--bgw);color:var(--tx);outline:none;transition:all .2s;resize:vertical}
+.c-form input:focus,.c-form select:focus,.c-form textarea:focus{border-color:var(--v-bd)}
+.c-form button{margin-top:6px}
+@media(max-width:640px){.c-form{grid-template-columns:1fr}}
 .comm-channels{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px}
 .ch-sep{font-family:var(--disp);font-size:.62rem;font-weight:600;color:rgba(255,255,255,.4);letter-spacing:.1em;text-transform:uppercase}
 .ch-pill{display:flex;align-items:center;gap:8px;font-family:var(--disp);font-size:.72rem;font-weight:600;color:rgba(255,255,255,.85);background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);padding:8px 16px;border-radius:100px;transition:all .2s;cursor:pointer}
@@ -240,6 +247,7 @@ img{display:block;max-width:100%}
       <a href="#vision" class="n-link">La vision</a>
       <a href="#contenu" class="n-link">Contenu</a>
       <a href="#pourqui" class="n-link">Pour qui</a>
+      <a href="#contact" class="n-link">Me contacter</a>
       <a href="#communaute" class="btn btn-p" style="font-size:.82rem;padding:9px 20px;border-radius:8px">Rejoindre</a>
     </div>
     <button class="m-btn" id="mBtn" aria-label="Menu">
@@ -252,6 +260,7 @@ img{display:block;max-width:100%}
     <a href="#vision">La vision</a>
     <a href="#contenu">Contenu & Formations</a>
     <a href="#pourqui">Pour qui</a>
+    <a href="#contact">Me contacter</a>
     <a href="#communaute">Rejoindre la communauté</a>
   </div>
 </nav>
@@ -543,6 +552,61 @@ img{display:block;max-width:100%}
       <p class="s-body light" style="margin:0 auto 28px;max-width:620px">Je travaille en partenariat avec des institutions, entreprises et organisations sur des problématiques stratégiques, opérationnelles, financières ou réglementaires liées aux paiements et à la finance digitale — conseil, formation, contenu ou conduite de projet. Discutons de vos besoins.</p>
       <a href="#contact" class="btn btn-p">Me contacter →</a>
     </div>
+  </div>
+</section>
+
+<!-- ══ CONTACT ════════════════════════════════════════════ -->
+<section class="contact" id="contact" style="padding:0 0 110px">
+  <div class="wrap" style="max-width:760px">
+    <div class="rv" style="text-align:center">
+      <span class="s-badge on-light" style="margin-bottom:20px">Entrons en contact</span>
+      <h2 class="s-ttl lg light" style="margin-bottom:14px">Parlons de votre besoin.</h2>
+      <p class="s-body light" style="margin:0 auto;max-width:540px">Une question, un projet, une opportunité de collaboration ? Remplissez le formulaire ci-dessous, je reviens vers vous rapidement.</p>
+    </div>
+
+    <form class="c-form rv" action="https://formspree.io/f/VOTRE_ID_FORMSPREE" method="POST">
+      <div>
+        <label for="c-name">Nom complet *</label>
+        <input type="text" id="c-name" name="nom" required>
+      </div>
+      <div>
+        <label for="c-email">Email *</label>
+        <input type="email" id="c-email" name="email" required>
+      </div>
+      <div>
+        <label for="c-org">Organisation / Institution</label>
+        <input type="text" id="c-org" name="organisation">
+      </div>
+      <div>
+        <label for="c-need">Nature du besoin *</label>
+        <select id="c-need" name="besoin" required>
+          <option value="">Sélectionnez…</option>
+          <option>Conseil & Accompagnement</option>
+          <option>Formation</option>
+          <option>Production de contenu</option>
+          <option>Partenariat média</option>
+          <option>Autre</option>
+        </select>
+      </div>
+      <div class="full">
+        <label for="c-source">Comment m'avez-vous connu ?</label>
+        <select id="c-source" name="source">
+          <option value="">Sélectionnez… (optionnel)</option>
+          <option>LinkedIn</option>
+          <option>WhatsApp</option>
+          <option>Recommandation</option>
+          <option>Recherche en ligne</option>
+          <option>Autre</option>
+        </select>
+      </div>
+      <div class="full">
+        <label for="c-msg">Message *</label>
+        <textarea id="c-msg" name="message" rows="5" required></textarea>
+      </div>
+      <div class="full" style="text-align:center">
+        <button type="submit" class="btn btn-p">Envoyer le message →</button>
+      </div>
+    </form>
   </div>
 </section>
 
